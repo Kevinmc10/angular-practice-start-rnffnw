@@ -1,0 +1,30 @@
+<body>
+  <h1>Coches Nuevos</h1>
+  <input type="text" required="" [(ngModel)]="newName" />
+  <button (click)="addName()">agregar nombre de coche</button>
+  <input type="text" required="" [(ngModel)]="newColor" />
+  <button (click)="addColor()">agregar color coche</button>
+  <input type="text"  required="" [(ngModel)]="newPlaca" />
+  <button (click)="addPlaca()">agregar placa del coche</button>
+  <ul id="nombre">
+    <li *ngIf="Carro.length === 0">no hay carros</li>
+    <li *ngFor="let Name of Carro; index as i">
+      {{ i }} {{ Name }}
+      <button (click)="deletecarro()">eliminar</button>
+    </li>
+  </ul>
+  <ul id="color">
+    <li *ngIf="Color.length === 0">no hay color del vehiculo</li>
+    <li *ngFor="let color of Color; index as i">
+      {{ i }} {{ color }}
+      <button (click)="deleteColor()">eliminar</button>
+    </li>
+  </ul>
+  <ul id="placa">
+    <li *ngIf="Placa.length === 0">no hay placa del vehiculo</li>
+    <li *ngFor="let placa of Placa; index as i">
+      {{ i }} {{ placa }}
+      <button (click)="deletePlaca()">eliminar</button>
+    </li>
+  </ul>
+</body>
